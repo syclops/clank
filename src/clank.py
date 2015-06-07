@@ -17,5 +17,11 @@ class Shell(cmd.Cmd):
     intro = 'Clank Version 0.1 - Steve Matsumoto\n'
     prompt = 'clank > '
 
+    def do_EOF(self, arg):
+        """
+        Handler for EOF input.
+        """
+        return True
+
 if __name__ == '__main__':
     Shell().cmdloop()
