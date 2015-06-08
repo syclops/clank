@@ -18,4 +18,10 @@ class Config(object):
         """
         Constructor.
         """
-        pass
+        if configFile is not None:
+            with open(configFile, 'r') as f:
+                contents = f.read()
+            self.config = configparser.ConfigParser()
+            self.config.read_string(contents)
+        else:
+            self.config = None
