@@ -17,11 +17,25 @@ class Shell(cmd.Cmd):
     intro = 'Clank Version 0.1 - Steve Matsumoto\n'
     prompt = 'clank > '
 
-    def do_EOF(self, arg):
+    def do_quit(self, arg):
         """
-        Handler for EOF input.
+        Quit the program.
+
+        Quit Clank by returning `True`, which causes `self.cmdloop()` to exit.
+
+        :returns: True
+        :rtype: bool
         """
         return True
+
+    def do_EOF(self, arg):
+        """
+        Handle EOF input by quitting.
+
+        Handle EOF input (passed as the string `'EOF'`) by exiting the shell's
+        command loop.
+        """
+        self.do_quit(arg)
 
 if __name__ == '__main__':
     Shell().cmdloop()
