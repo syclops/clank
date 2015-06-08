@@ -17,6 +17,12 @@ class Shell(cmd.Cmd):
     intro = 'Clank Version 0.1 - Steve Matsumoto\n'
     prompt = 'clank > '
 
+    def do_ls(self, arg):
+        """
+        List available decks along with their stats.
+        """
+        pass
+
     def do_quit(self, arg):
         """
         Quit the program.
